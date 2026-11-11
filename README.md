@@ -6,14 +6,6 @@ Elle s'appuie sur un socle applicatif complet (FastAPI, PostgreSQL / SQLite, Red
 
 > **Pitch** — KAP Guyane montre à chaque maire, carreau par carreau, où sa population a réellement grandi depuis le dernier recensement grâce aux satellites du CNES et de Copernicus, pour décider où ouvrir la prochaine école et quels quartiers signaler à l'INSEE, **sans jamais désigner une seule maison**.
 
-## Socle commun
-
-La console repose sur un socle réutilisable par d'autres plateformes de la même famille : **le même front** (charte graphique, bandeau, navigation desktop et tiroir mobile ☰, connexion, audit, comptes, sources personnalisées, impression) et **le même socle de sécurité** (verrouillage atomique des comptes, adresse client lue de droite à gauche derrière le proxy, cookie de session `__Host-` en HTTPS, CSRF, sonde de session par rôle pour `/docs/` et `/notifs/`, limitation des connexions dès nginx, CSP sans ressource tierce — polices IBM Plex auto-hébergées —, `Permissions-Policy` restrictive, anti-SSRF et anti-*DNS rebinding* des sources personnalisées, tuiles limitées au territoire, audit chaîné vérifié par lots).
-
-- Fichiers du socle commun et règles d'évolution : `frontend/SHARED.md` ; seule l'identité diffère (`frontend/src/platform.js`).
-- `make shared-check OTHER=../<projet>` vérifie que ces fichiers sont identiques dans un projet voisin.
-- `backend/tests/test_shared_core.py` teste ce socle côté API.
-
 ## Ce que fait la plateforme
 
 | Brique | Détail |
