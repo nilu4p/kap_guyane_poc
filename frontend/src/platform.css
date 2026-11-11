@@ -1,0 +1,30 @@
+/* KAP Guyane — map symbols of the territorial platform (the shared look is in index.css). */
+
+/* Numbered markers of the recommended sites. */
+.site-marker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 9999px;
+  background: #ffffff;
+  color: #070b10;
+  font: 600 13px "IBM Plex Sans", sans-serif;
+  border: 3px solid #2dd4bf;
+  box-shadow: 0 0 10px rgba(45, 212, 191, 0.8);
+}
+
+.facility-marker {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  background: var(--marker, #94a3b8);
+  border: 1.5px solid #070b10;
+  transform: rotate(45deg);
+}
+
+.facility-marker.is-planned {
+  border: 2px dashed #ffffff;
+}

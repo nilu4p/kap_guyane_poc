@@ -1,0 +1,126 @@
+site_name: KAP Guyane — Base de connaissances
+site_description: Méthodes, sources, écrans et procédures de la plateforme GEOINT d'aide à la décision des communes de Guyane
+site_url: http://localhost:8080/docs/
+docs_dir: content
+exclude_docs: |
+  includes/
+validation:
+  links:
+    anchors: warn
+    unrecognized_links: warn
+copyright: KAP Guyane · Space4Yana — documentation interne
+
+theme:
+  name: material
+  language: fr
+  font: false            # no Google Fonts: the CSP only allows the site itself
+  icon:
+    logo: material/map-search
+  favicon: assets/favicon.svg
+  palette:
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: teal
+      toggle:
+        icon: material/weather-sunny
+        name: Passer en thème clair
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: teal
+      toggle:
+        icon: material/weather-night
+        name: Passer en thème sombre
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - navigation.instant
+    - search.suggest
+    - search.highlight
+    - search.share
+    - toc.follow
+    - content.tooltips
+
+extra_css:
+  - assets/extra.css
+
+plugins:
+  - search:
+      lang: fr
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - md_in_html
+  - tables
+  - footnotes
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.keys
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.mark
+  - pymdownx.caret
+  - pymdownx.tilde
+  - pymdownx.snippets:
+      base_path: [content]
+      auto_append:
+        - includes/abbreviations.md
+
+nav:
+  - Accueil: index.md
+  - Prise en main:
+      - prise-en-main/index.md
+      - Démonstration en 5 minutes: prise-en-main/demonstration.md
+      - Rôles et droits: prise-en-main/roles.md
+  - Écrans:
+      - ecrans/index.md
+      - Territoire: ecrans/territoire.md
+      - Fiche commune: ecrans/commune.md
+      - Atlas: ecrans/atlas.md
+      - Aide à la décision: ecrans/decision.md
+      - Veille et Recensement Éclaireur: ecrans/veille.md
+      - Équipements: ecrans/equipements.md
+      - Analyses et données: ecrans/analyses.md
+      - Validation visuelle: ecrans/validation.md
+      - Rapports signés: ecrans/rapports.md
+  - Méthodes et calculs:
+      - methodes/index.md
+      - Grille de 200 m: methodes/grille.md
+      - Bâti par satellite (fusion): methodes/bati-satellite.md
+      - Population par carreau: methodes/population.md
+      - Accessibilité: methodes/accessibilite.md
+      - Aide à l'implantation: methodes/implantation.md
+      - Veille et Recensement Éclaireur: methodes/veille-recensement.md
+      - Indicateurs statistiques: methodes/indicateurs.md
+  - Données et sources: donnees.md
+  - Charte d'usage: ethique.md
+  - Journal d'audit: audit.md
+  - Administration:
+      - administration/index.md
+      - Paramètres: administration/parametres.md
+      - Sources personnalisées: administration/sources-personnalisees.md
+      - Notifications: administration/notifications.md
+      - Supervision technique: administration/supervision.md
+  - Exploitation:
+      - Commandes et installation: exploitation.md
+      - Architecture: architecture.md
+      - Sécurité: securite.md
+      - API: api.md
+  - Glossaire: glossaire.md
+  - FAQ: faq.md

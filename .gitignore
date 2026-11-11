@@ -1,0 +1,67 @@
+# =====================================================================
+# KAP Guyane — never commit secrets or operational data.
+# =====================================================================
+
+# --- Secrets & configuration ------------------------------------------
+.env
+.env.*
+.env.local
+!.env.example
+*.pem
+*.key
+*.crt
+*.csr
+*.p12
+*.pfx
+*.enc
+master.key
+api_credentials*
+
+# --- Runtime data (volumes) -------------------------------------------
+keys/
+data/
+cache/
+backups/
+*.db
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+*.tar.gz
+kap-*.tar.gz
+# Note: bundled offline references (backend/app/reference/*.json.gz) are versioned on purpose.
+
+# --- Logs, outputs, local artefacts -----------------------------------
+# Celery / kombu local broker bookkeeping (exchange bindings, worker host names).
+backend/control/
+celerybeat-schedule*
+*.log
+*.out
+error.txt
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+__pycache__/
+*.py[cod]
+.coverage
+htmlcov/
+
+# --- Environments & builds --------------------------------------------
+.venv/
+venv/
+node_modules/
+frontend/dist/
+
+# --- Editors / OS -----------------------------------------------------
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# MkDocs build output
+docs/site/
+
+# Docker secrets (PostgreSQL / Redis passwords)
+secrets/
+
